@@ -8,16 +8,16 @@ def readDetails(filename):
     return Lines
     
 
-@app2.route('/')
+@app.route('/')
 def home():
     name = "Mark Rodriguez"
     details = readDetails('static/details.txt')
     return render_template("base.html", name = name, aboutMe = details)
 
-@app2.route('/user/CV')
+@app.route('/user/CV')
 def get_pdf():
         return  "This is my resume"
-@app2.route('/form', methods=['GET','POST'])
+@app.route('/form', methods=['GET','POST'])
 def formDemo():
     name = None
     if request.method == 'POST':
@@ -25,4 +25,4 @@ def formDemo():
     return render_template('form.html', name=name)
 
 if __name__ == '__main__':
-    app2.run(debug=True)
+    app.run(debug=True)
