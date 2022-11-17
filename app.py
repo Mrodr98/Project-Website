@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template, request
-app2 = Flask(__name__)
+app = Flask(__name__)
 
 def readDetails(filename):
     file1 = open(filename, 'r')
